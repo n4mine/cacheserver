@@ -49,7 +49,7 @@ func (cs *CS) Push(ts int64, value float64) error {
 	}
 
 	if t0 < currentChunk.T0 {
-		return fmt.Errorf("data @%v, goes back into previous chunk. currentchunk t0: %v\n", t0, currentChunk.T0)
+		return fmt.Errorf("data @%v, goes back into previous chunk. currentchunk t0: %v", t0, currentChunk.T0)
 	}
 
 	// 需要新建chunk

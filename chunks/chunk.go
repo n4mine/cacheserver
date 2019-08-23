@@ -26,7 +26,7 @@ func NewChunk(t0 uint32) *Chunk {
 
 func (c *Chunk) Push(t uint32, v float64) error {
 	if t <= c.LastTs {
-		return fmt.Errorf("Point must be newer than already added points. t:%d lastTs: %d\n", t, c.LastTs)
+		return fmt.Errorf("point must be newer than already added points. t:%d lastTs: %d", t, c.LastTs)
 	}
 	c.Series.Push(t, v)
 	c.NumPoints += 1
