@@ -21,7 +21,11 @@ func Start(c config.WebConfig) {
 func register(router *gin.Engine) {
 	router.GET("/self/ping", httpPingHandler)
 	router.GET("/self/version", httpVersionHandler)
+
 	router.GET("/getcount", httpGetInfoHandler)
-	router.GET("/getinfobyname", httpGetInfoByNameHandler)
-	router.GET("/getdatabyname", httpGetDataByNameHandler)
+
+	router.GET("/getinfo", httpGetDataInfoHandler)
+
+	router.GET("/getdata", httpGetDataHandler)
+	router.POST("/pushdata", httpPushHandler)
 }

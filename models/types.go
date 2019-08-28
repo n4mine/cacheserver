@@ -10,8 +10,8 @@ var (
 )
 
 var (
-	ErrNonEnoughData  = errors.New("non enough data")
-	ErrNonExistSeries = errors.New("non exist series")
+	ErrNonEnoughData  = errors.New("not enough data")
+	ErrNonExistSeries = errors.New("not exist series")
 	ErrInternalError  = errors.New("internal error")
 )
 
