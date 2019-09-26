@@ -73,4 +73,4 @@ resp:
 
 ## For production
 
-* use [RPC](./rpc/cacheserver.go) pls
+* use [RPC](./rpc/cacheserver.go)
