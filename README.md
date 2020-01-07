@@ -2,6 +2,10 @@
 
 * in memory tsdb
 
+# Capability
+
+* store 20M series with 2 hours data in memory (128GB)
+
 # Architecture
 
 <img width="250" height="312" src="https://n4mine.github.io/img/cacheserver.png"/>
