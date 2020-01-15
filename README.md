@@ -4,7 +4,7 @@
 
 # Capability
 
-* store 20M series with 2 hours data in memory (128GB)
+* store 20M series with 2 hours data in memory (less than 100GB)
 
 # Architecture
 
