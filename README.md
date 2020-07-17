@@ -4,7 +4,7 @@
 
 # Capability
 
-* store 20M series with 2 hours data in memory (less than 100GB)
+* store 20M series with 2 hours data in memory (use less than 100GB memory)
 
 # Architecture
 
@@ -12,17 +12,13 @@
 
 
 
-# BUILD
+# BUILD && RUN
 
 ```
 go get -u -v github.com/n4mine/cacheserver
 cd $GOPATH/github.com/n4mine/cacheserver
 make
-```
 
-# RUN
-
-```
 ./cacheserver
 ```
 
