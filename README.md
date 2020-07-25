@@ -12,7 +12,7 @@
 
 
 
-# BUILD && RUN
+# How to Build && Run
 
 ```
 go get -u -v github.com/n4mine/cacheserver
@@ -22,7 +22,7 @@ make
 ./cacheserver
 ```
 
-# USAGE
+# How to Push && Get data
 
 ## For debug/development
 
