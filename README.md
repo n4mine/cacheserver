@@ -73,4 +73,24 @@ resp:
 
 ## For production
 
-* use [RPC](./rpc/cacheserver.go)
+* use rpc in [rpc/cacheserver.go](./rpc/cacheserver.go)
+* need to unpack in client by use
+
+```go
+type DataResp struct {
+	// code == 0, normal
+	// code >  0, exception
+	Code int    `msg:"code"`
+	Msg  string `msg:"msg"`
+	Key  string `msg:"key"`
+	From int64  `msg:"from"`
+	To   int64  `msg:"to"`
+	Step int    `msg:"step"`
+	RRA  int    `msg:"rra"`
+	Data []Iter `msg:"data"`
+}
+
+type Iter struct {
+	*tsz.Iter
+}
+```
