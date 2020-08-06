@@ -20,6 +20,7 @@ var (
 var (
 	TotalCount int64
 	cleaning   bool
+	StartTS    int64
 )
 
 type (
@@ -33,6 +34,7 @@ type cache struct {
 
 func InitCaches() {
 	CacheObj = NewCaches()
+	StartTS = time.Now().Unix()
 }
 
 func NewCaches() caches {
@@ -88,7 +90,7 @@ func (c *caches) Get(seriesID string, from, to int64) ([]chunks.Iter, error) {
 	f, t := existC.GetInfo()
 	// 为什么没有 to > int64(t)
 	// cacheserver的数据都是经由transfer进行时间戳对齐的, 大部分场景都不会满足 to > t
-	if from < int64(f) || from > int64(t) || to < int64(f) {
+	if from < StartTS || from > int64(t) || to < int64(f) {
 		return nil, models.ErrNonEnoughData
 	}
 
