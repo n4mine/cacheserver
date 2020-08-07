@@ -31,7 +31,7 @@ make
 use `series1` as name
 
 ```
-curl -s -XPOST "http://127.0.0.1:7000/push?name=series1&ts=$(date +%s)&value=$(shuf -i 0-100 -n1)"
+curl -s -XPOST "http://127.0.0.1:7000/pushdata?name=series1&ts=$(date +%s)&value=$(shuf -i 0-100 -n1)"
 ```
 
 ### Get data info
