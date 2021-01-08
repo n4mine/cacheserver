@@ -74,7 +74,7 @@ resp:
 ## For production
 
 * use rpc in [rpc/cacheserver.go](./rpc/cacheserver.go)
-* need to unpack in client by use
+* need to unpack data in client side
 
 ```go
 type DataResp struct {
