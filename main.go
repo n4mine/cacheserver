@@ -45,11 +45,8 @@ func main() {
 	fmt.Println("start ok")
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM)
-	select {
-	case s := <-sc:
-		fmt.Println("catch signal: ", s)
-	}
-
+	s := <-sc
+	fmt.Println("catch signal: ", s)
 	fmt.Println("stop ok")
 }
 

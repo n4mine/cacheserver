@@ -78,8 +78,6 @@ func (cs *CS) Push(ts int64, value float64) error {
 
 		return cs.Chunks[cs.currentChunkPos].Push(uint32(ts), value)
 	}
-
-	return nil
 }
 
 func (cs *CS) Get(from, to int64) []Iter {
@@ -202,7 +200,7 @@ func (cs *CS) GetInfoUnsafe() (uint32, uint32) {
 	return oldestTs, newestTs
 }
 
-func (cs CS) getChunk(pos int) *Chunk {
+func (cs *CS) getChunk(pos int) *Chunk {
 	if pos < 0 || pos >= len(cs.Chunks) {
 		return cs.Chunks[0]
 	}

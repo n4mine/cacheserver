@@ -18,6 +18,7 @@ func Start(c config.WebConfig) {
 
 	router.Run(c.Port)
 }
+
 func register(router *gin.Engine) {
 	router.GET("/self/ping", httpPingHandler)
 	router.GET("/self/version", httpVersionHandler)

@@ -13,9 +13,7 @@ import (
 
 const SHARD_COUNT = 32
 
-var (
-	CacheObj caches
-)
+var CacheObj caches
 
 var (
 	TotalCount int64

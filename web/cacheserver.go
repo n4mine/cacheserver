@@ -87,5 +87,4 @@ func httpPushHandler(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, "ok")
-
 }
