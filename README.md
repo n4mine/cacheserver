@@ -8,7 +8,7 @@
 
 # Architecture
 
-<img width="250" height="312" src="https://n4mine.github.io/img/cacheserver.png"/>
+<img src="https://n4mine.github.io/img/cc.jpg"/>
 
 
 

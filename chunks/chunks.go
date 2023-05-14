@@ -134,7 +134,7 @@ func (cs *CS) Get(from, to int64) []Iter {
 		}
 	}
 
-	// 找to所在的trunk
+	// 找to所在的chunk
 	newestPos := cs.currentChunkPos
 	for to <= int64(newestChunk.T0) {
 		newestPos--
