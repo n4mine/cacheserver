@@ -29,6 +29,9 @@ func NewChunks(c config.CacheConfig) *CS {
 func (cs *CS) Push(ts int64, value float64) error {
 	t0 := uint32(ts - (ts % int64(config.C.Cache.SpanInSeconds)))
 
+	cs.Lock()
+	defer cs.Unlock()
+
 	// 尚无chunk
 	if len(cs.Chunks) == 0 {
 		c := NewChunk(uint32(t0))

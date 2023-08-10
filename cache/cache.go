@@ -58,21 +58,14 @@ func GC(cfg config.GcConfig) {
 }
 
 func (c *caches) Push(seriesID string, ts int64, value float64) error {
-	shard := c.getShard(seriesID)
 	existC, exist := CacheObj.exist(seriesID)
 
 	if exist {
-		shard.Lock()
-		err := existC.Push(ts, value)
-		shard.Unlock()
-		return err
+		return existC.Push(ts, value)
 	}
-	newC := CacheObj.create(seriesID)
-	shard.Lock()
-	err := newC.Push(ts, value)
-	shard.Unlock()
 
-	return err
+	newC := CacheObj.create(seriesID)
+	return newC.Push(ts, value)
 }
 
 func (c *caches) Get(seriesID string, from, to int64) ([]chunks.Iter, error) {
